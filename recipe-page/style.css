@@ -80,6 +80,7 @@ li {
 }
 
 .card hr {
+  color: var(--light-grey);
   border-top: var(--light-grey);
   margin-bottom: 1.5rem;
 }
