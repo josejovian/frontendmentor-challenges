@@ -1,0 +1,212 @@
+:root {
+  --nutmeg: hsl(14, 45%, 36%);
+  --dark-raspberry: hsl(332, 51%, 32%);
+  --white: hsl(0, 0%, 100%);
+  --rose-white: hsl(330, 100%, 98%);
+  --eggshell: hsl(30, 54%, 90%);
+  --light-grey: hsl(30, 18%, 87%);
+  --wenge-brown: hsl(30, 10%, 34%);
+  --dark-charcoal: hsl(24, 5%, 18%);
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "YoungSerif";
+  font-weight: normal;
+  font-style: normal;
+  src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 8px;
+}
+
+body {
+  background: var(--eggshell);
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+  color: var(--dark-charcoal);
+  font-family: "YoungSerif";
+  font-weight: 400;
+}
+
+h2 {
+  color: var(--nutmeg);
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+span,
+p,
+li {
+  color: var(--wenge-brown);
+  font-family: "Outfit";
+  line-height: 1.5rem;
+}
+
+.card {
+  max-width: 720px;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 1.5rem;
+}
+
+.card li {
+  line-height: 2rem;
+}
+
+.card hr {
+  border-top: var(--light-grey);
+  margin-bottom: 1.5rem;
+}
+
+.card__thumbnail {
+  width: 100%;
+}
+
+.card__thumbnail--desktop {
+  border-radius: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.card__thumbnail--mobile {
+  display: none;
+}
+
+.card ol {
+  padding-left: 1.5rem;
+}
+
+.card ul {
+  list-style-type: none;
+}
+
+.card ol li {
+  padding-left: 1rem;
+}
+
+.card ul li {
+  display: table;
+  width: 100%;
+  margin-left: -1rem;
+}
+
+.card ul .marker {
+  display: table-cell;
+  width: 4rem;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+.card__list-ingredients {
+  margin-bottom: 1.5rem;
+}
+
+.list-prep-time__marker {
+  color: var(--dark-raspberry);
+}
+
+.card__ingredients,
+.card__steps {
+  margin-bottom: 1.5rem;
+}
+
+:is(.card__ingredients, .card__steps) > li::marker {
+  color: var(--nutmeg);
+  font-weight: 700;
+}
+
+.card__nutritions {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.card__nutritions :is(td, th) {
+  font-weight: 400;
+  text-align: left;
+  padding: 0.75rem 2rem;
+}
+
+.card__nutritions tr:not(:last-child) :is(td, th) {
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.nutritions__data--emphasis > span {
+  color: var(--nutmeg);
+  font-weight: 700;
+}
+
+.card__info {
+  padding: 1rem;
+  background: var(--rose-white);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card__info > h3 {
+  color: var(--dark-raspberry);
+  font-size: 1.25rem;
+  font-family: "Outfit";
+  margin-bottom: 0.75rem;
+}
+
+.card__info > ul > li::marker {
+  color: var(--dark-raspberry);
+}
+
+@media only screen and (max-width: 1024px) {
+  html,
+  body {
+    padding: 0;
+  }
+
+  .card {
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .card__thumbnail {
+    display: none;
+  }
+
+  .card__thumbnail--mobile {
+    display: block;
+  }
+}
+
+.attribution p {
+  font-size: 11px;
+  text-align: center;
+  margin: 0;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
