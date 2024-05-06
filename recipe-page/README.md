@@ -36,8 +36,6 @@ This is a solution to the [Recipe page challenge on Frontend Mentor](https://www
 - Semantic HTML5 markup
 - CSS custom properties
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
-
 ### What I learned
 
 Though this was a straight-forward challenge, I spent a lot of time figuring out how to work with BEM naming convention for the styling. One interesting part about this challenge was the bullet points' placement in the unordered lists. I noticed this particular detail late in the challenge, and I decided to not ignore this detail.  
@@ -55,7 +53,7 @@ I may focus more on BEM naming convention.
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://github.com/josejovian)
+- GitHub - [Jose Jovian](https://github.com/josejovian)
 
 ## Acknowledgments
 
