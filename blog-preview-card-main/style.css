@@ -26,6 +26,10 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 span {
   display: block;
   width: fit-content;
@@ -44,6 +48,11 @@ body {
   border: 1px solid var(--black);
   border-radius: 1rem;
   box-shadow: 0.5rem 0.5rem var(--black);
+  transition: 0.2s all;
+}
+
+.card:hover {
+  box-shadow: 1rem 1rem var(--black);
 }
 
 .card__thumbnail {
@@ -64,10 +73,14 @@ body {
   margin-bottom: 1rem;
 }
 
-.card__title {
+.card__title h2 {
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
+}
+
+.card:hover .card__title h2 {
+  color: var(--yellow);
 }
 
 .card__desc {
