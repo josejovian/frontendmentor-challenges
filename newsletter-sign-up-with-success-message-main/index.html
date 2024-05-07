@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- Sign-up form start -->
+
+    <div id="register-card" class="card">
+      <div class="register-card__main">
+        <h1>Stay updated!</h1>
+        <p class="register-card__instruction">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="register-card__list">
+          <li><p>Product discovery and building what matters</p></li>
+          <li><p>Measuring to ensure updates are a success</p></li>
+          <li><p>And much more!</p></li>
+        </ul>
+        <div class="register-card__form">
+          <div class="form__head">
+            <span class="form__title">Email address</span>
+            <span id="form__warning">Valid email required</span>
+          </div>
+          <input
+            class="form__input"
+            id="email"
+            type="email"
+            placeholder="email@company.com"
+          />
+          <button id="form__submit">Subscribe to monthly newsletter</button>
+        </div>
+      </div>
+      <img
+        class="register-card__illust-desktop"
+        src="./assets/images/illustration-sign-up-desktop.svg"
+      />
+      <img
+        class="register-card__illust-mobile"
+        src="./assets/images/illustration-sign-up-mobile.svg"
+      />
+    </div>
+
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+
+    <div id="success-message" class="card">
+      <div class="success-message__main">
+        <img
+          class="success-message__illustration"
+          src="./assets/images/icon-success.svg"
+        />
+        <h1>Thanks for subscribing!</h1>
+        <p class="success-message__description">
+          A confirmation email has been sent to
+          <strong>ash@loremcompany.com</strong>. Please open it and click the
+          button inside to confirm your subscription.
+        </p>
+      </div>
+      <button id="success-message__action">Dismiss message</button>
+    </div>
+
+    <!-- Success message end -->
+
+    <div class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/josejovian">Jose Jovian</a>.
+      </p>
+    </div>
+
+    <script>
+      const emailElm = document.getElementById("email");
+      const warningTextElm = document.getElementById("form__warning");
+
+      function showError() {
+        warningTextElm.style.display = "block";
+        emailElm.classList = "form__input form__input--error";
+      }
+
+      function hideError() {
+        warningTextElm.style.display = "none";
+        emailElm.classList = "form__input";
+      }
+
+      function validateEmail(email = "") {
+        let verdict = (() => {
+          if (email === "") return false;
+          const regex = new RegExp(/^\S+@\S+\.\S+$/);
+          console.log(email);
+          return regex.test(email);
+        })();
+
+        if (verdict) {
+          hideError();
+        } else {
+          showError();
+        }
+
+        return verdict;
+      }
+
+      function showSuccess() {
+        document.getElementById("register-card").style.display = "none";
+        document.getElementById("success-message").style.display = "flex";
+      }
+
+      function hideSuccess() {
+        document.getElementById("register-card").style.display = "flex";
+        document.getElementById("success-message").style.display = "none";
+      }
+
+      let submitBtn = document.getElementById("form__submit");
+      submitBtn.addEventListener("click", () => {
+        let isValid = validateEmail(emailElm.value);
+
+        isValid && showSuccess();
+      });
+
+      let dismissBtn = document.getElementById("success-message__action");
+      dismissBtn.addEventListener("click", hideSuccess);
+    </script>
+  </body>
+</html>

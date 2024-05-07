@@ -1,0 +1,254 @@
+:root {
+  --tomato: hsl(4, 100%, 67%);
+  --dark-slate-grey: hsl(234, 29%, 20%);
+  --charcoal-grey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  font-weight: 700;
+  src: url("./assets/fonts/Roboto-Bold.ttf");
+}
+
+* {
+  color: var(--dark-slate-grey);
+  font-family: "Roboto";
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: var(--charcoal-grey);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  color: var(--dark-slate-grey);
+  font-family: "Roboto-Bold";
+  font-size: 3rem;
+}
+
+p {
+  color: var(--dark-slate-grey);
+  line-height: 2rem;
+}
+
+button {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  outline: 0;
+  border: 0;
+  color: var(--white);
+  font-size: 1rem;
+  font-family: "Roboto-Bold";
+  background: var(--dark-slate-grey);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: rgb(235, 145, 66);
+  background: -moz-linear-gradient(
+    342deg,
+    rgba(235, 145, 66, 1) 0%,
+    rgba(255, 87, 161, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    342deg,
+    rgba(235, 145, 66, 1) 0%,
+    rgba(255, 87, 161, 1) 100%
+  );
+  background: linear-gradient(
+    342deg,
+    rgba(235, 145, 66, 1) 0%,
+    rgba(255, 87, 161, 1) 100%
+  );
+  box-shadow: 6px 6px 22px -2px rgba(255, 87, 161, 0.7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#eb9142",endColorstr="#ff57a1",GradientType=1);
+}
+
+.card {
+  background: var(--white);
+  border-radius: 2rem;
+}
+
+#register-card {
+  display: flex;
+  padding: 1.5rem;
+  max-width: 60rem;
+  gap: 2rem;
+}
+
+#register-card > * {
+  flex: 1;
+}
+
+.register-card__main {
+  margin: auto 0;
+  padding-left: 4rem;
+}
+
+.register-card__instruction {
+  margin-bottom: 1rem;
+}
+
+.register-card__list {
+  list-style-type: none;
+  margin-bottom: 1.5rem;
+}
+
+.register-card__list > li {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.register-card__list > li::before {
+  position: absolute;
+  top: 0.25rem;
+  left: 0rem;
+  content: url(./assets/images/icon-list.svg);
+}
+
+.register-card__illust-desktop {
+  display: block;
+}
+
+.register-card__illust-mobile {
+  display: none;
+  width: 100%;
+}
+
+.register-card__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form__head > span {
+  font-size: 0.8rem;
+  font-family: "Roboto-Bold";
+  margin-bottom: 0.5rem;
+}
+
+#form__warning {
+  display: none;
+  color: var(--tomato);
+}
+
+.form__input {
+  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--grey);
+  border-radius: 0.5rem;
+}
+
+.form__input:focus {
+  border: 1px solid var(--dark-slate-grey);
+  outline: 0;
+}
+
+.form__input--error {
+  color: var(--tomato);
+  background: hsl(4, 100%, 67%, 0.2);
+  border: 1px solid var(--tomato);
+}
+
+.form__input--error:focus {
+  border: 1px solid var(--tomato);
+}
+
+#success-message {
+  display: none;
+  max-width: 30rem;
+  padding: 4rem;
+  flex-direction: column;
+}
+
+.success-message__illustration {
+  margin-bottom: 1.5rem;
+}
+
+.success-message__description {
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.success-message__description strong {
+  font-family: "Roboto-Bold";
+}
+
+.attribution {
+  width: 100%;
+  padding: 1rem;
+}
+
+.attribution :is(p, a) {
+  text-align: center;
+  color: white;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+  }
+
+  #success-message {
+    flex: 1;
+    max-width: 100%;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0;
+  }
+
+  .success-message__main {
+    margin: auto;
+  }
+
+  #register-card {
+    width: 100%;
+    flex-direction: column-reverse;
+    padding: 0;
+    gap: 0;
+    border-radius: 0;
+  }
+
+  .register-card__main {
+    padding: 2rem;
+  }
+
+  .register-card__illust-desktop {
+    display: none;
+  }
+
+  .register-card__illust-mobile {
+    display: block;
+  }
+}
