@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | News homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav id="nav">
+      <img src="./assets/images/logo.svg" />
+      <button class="nav__button" id="nav__open">
+        <img src="./assets/images/icon-menu.svg" />
+      </button>
+      <div id="nav__links">
+        <button class="nav__button" id="nav__close">
+          <img src="./assets/images/icon-menu-close.svg" />
+        </button>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">New</a></li>
+          <li><a href="">Popular</a></li>
+          <li><a href="">Trending</a></li>
+          <li><a href="">Categories</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main id="main">
+      <section class="main-article">
+        <img
+          class="main-article__thumbnail--desktop"
+          src="./assets/images/image-web-3-desktop.jpg"
+        />
+        <img
+          class="main-article__thumbnail--mobile"
+          src="./assets/images/image-web-3-mobile.jpg"
+        />
+        <article class="main-article__content">
+          <h1 class="content__title">The Bright Future of Web 3.0?</h1>
+          <p class="content__description">
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <button class="content__action">Read more</button>
+        </article>
+      </section>
+      <aside class="side-list">
+        <h2>New</h2>
+        <article>
+          <h3><a href="#">Hydrogen VS Electric Cars</a></h3>
+          <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </article>
+        <hr />
+        <article>
+          <h3><a href="#">The Downsides of AI Artistry</a></h3>
+          <p>
+            What are the possible adverse effects of on-demand AI image
+            generation?
+          </p>
+        </article>
+        <hr />
+        <article>
+          <h3><a href="#">Is VC Funding Drying Up?</a></h3>
+          <p>Private funding by VC firms is down 50% YOY.</p>
+        </article>
+      </aside>
+    </main>
+    <section class="bottom-list">
+      <article class="bottom-list__entry">
+        <img
+          class="bottom-list__thumbnail"
+          src="./assets/images/image-retro-pcs.jpg"
+        />
+        <div class="entry-details">
+          <p class="entry-details__index">01</p>
+          <p class="entry-details__title"><a href="#">Reviving Retro PCs</a></p>
+          <p class="entry-details__description">
+            What happens when old PCs are given modern upgrades?
+          </p>
+        </div>
+      </article>
+      <article class="bottom-list__entry">
+        <img
+          class="bottom-list__thumbnail"
+          src="./assets/images/image-top-laptops.jpg"
+        />
+        <div class="entry-details">
+          <p class="entry-details__index">02</p>
+          <p class="entry-details__title">
+            <a href="#">Top 10 Laptops of 2022</a>
+          </p>
+          <p class="entry-details__description">
+            Our best picks for various needs and budgets.
+          </p>
+        </div>
+      </article>
+      <article class="bottom-list__entry">
+        <img
+          class="bottom-list__thumbnail"
+          src="./assets/images/image-gaming-growth.jpg"
+        />
+        <div class="entry-details">
+          <p class="entry-details__index">03</p>
+          <p class="entry-details__title">
+            <a href="#">The Growth of Gaming</a>
+          </p>
+          <p class="entry-details__description">
+            How the pandemic has sparked fresh opportunities.
+          </p>
+        </div>
+      </article>
+    </section>
+    <footer class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/josejovian">Jose Jovian</a>.
+      </p>
+    </footer>
+    <script>
+      let navMode = 0;
+      const navBtn = document.getElementById("nav__open");
+
+      navBtn.addEventListener("click", () => {
+        const navLink = document.getElementById("nav__links");
+        navLink.style.display = "block";
+      });
+
+      const navCloseBtn = document.getElementById("nav__close");
+
+      navCloseBtn.addEventListener("click", () => {
+        const navLink = document.getElementById("nav__links");
+        navLink.style.display = "none";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,259 @@
+
+:root
+  --soft-orange: hsl(35, 77%, 62%)
+  --soft-red: hsl(5, 85%, 63%)
+  --off-white: hsl(36, 100%, 99%)
+  --grayish-blue: hsl(233, 8%, 79%)
+  --dark-grayish-blue: hsl(236, 13%, 42%)
+  --very-dark-blue: hsl(240, 100%, 5%)
+
+@font-face
+  font-family: "Inter"
+  src: url("./assets/fonts/Inter-VariableFont_slnt,wght.ttf")
+
+*
+  color: var(--very-dark-blue)
+  font-size: 15px
+  font-family: "Inter"
+  font-weight: 400
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+html, body
+  margin: 0
+  padding: 0
+
+html
+  display: flex
+  padding: 2rem
+
+body
+  max-width: 1024px
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  margin: auto
+
+img
+  width: 100%
+
+h1
+  font-weight: 800
+
+h2, h3
+  font-weight: 700
+
+a
+  color: unset
+  font-weight: unset
+  text-decoration: none
+
+a:hover
+  color: var(--soft-red)
+
+#main
+  display: flex
+  flex-direction: row
+  gap: 2rem
+
+#nav
+  grid-area: nav
+  height: 2rem
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  > img
+    width: auto
+    height: 100%
+
+  ul
+    list-style-type: none
+    display: flex
+    gap: 2rem
+
+  #nav__open
+    display: none
+
+  .nav__links
+    display: block
+
+  .nav__button
+    width: 2rem
+    height: 2rem
+    border: 0
+    background: none
+
+    img
+      width: 100%
+      height: auto
+
+#nav__close
+  display: none
+
+.main-article
+  display: flex
+  gap: 2rem
+  flex-direction: column
+
+  h1
+    font-size: 3.5rem
+
+  .main-article__thumbnail--desktop
+    display: block
+
+  .main-article__thumbnail--mobile
+    display: none
+
+  .main-article__content
+    display: grid
+    grid-template-areas: "title description" "title action"
+    gap: 2rem
+
+  .content__title
+    grid-area: title
+
+  .content__description
+    grid-area: description
+    color: var(--dark-grayish-blue)
+    line-height: 1.5rem
+
+  .content__action
+    grid-area: action
+
+  button
+    width: fit-content
+    height: fit-content
+    padding: 1rem 2rem
+    margin-top: auto
+    border: 0
+    color: var(--off-white)
+    background: var(--soft-red)
+    text-transform: uppercase
+    font-weight: 700
+    letter-spacing: 4px
+    cursor: pointer
+
+  button:hover
+    background: var(--very-dark-blue)
+
+.side-list
+  padding: 2rem 1.5rem
+  background: var(--very-dark-blue)
+
+  h2
+    font-size: 2.5rem
+    color: var(--soft-orange)
+
+  h3
+    margin-bottom: 0.5rem
+    color: var(--off-white)
+
+    a:hover
+      color: var(--soft-orange)
+
+  p
+    line-height: 1.75rem
+    color: var(--grayish-blue)
+
+  hr
+    color: var(--grayish-blue)
+    border-top-color: var(--grayish-blue)
+
+  article
+    margin: 2rem 0
+
+.bottom-list
+  display: flex
+  gap: 2rem
+  grid-area: post
+
+  .bottom-list__entry
+    display: flex
+    gap: 2rem
+
+  .entry-details
+    display: flex
+    flex-direction: column
+    gap: 1rem
+
+  .bottom-list__thumbnail
+    width: 8rem
+    height: auto
+
+  .entry-details__index
+    color: var(--grayish-blue)
+    font-size: 2rem
+    font-weight: 700
+
+  .entry-details__title
+    color: var(--very-dark-blue)
+    font-size: 1.2rem
+    font-weight: 800
+
+  .entry-details__description
+    color: var(--dark-grayish-blue)
+    line-height: 1.6rem
+
+.attribution
+  text-align: center
+
+@media only screen and (max-width: 840px)
+  html
+    padding: 1.25rem
+
+  body
+    width: 100%
+    gap: 4rem
+
+  #nav
+    #nav__open
+      display: block
+
+    #nav__links
+      display: none
+      position: fixed
+      top: 0
+      right: 0
+      width: calc(100vw - 10rem)
+      height: 100vh
+      background: var(--off-white)
+
+      #nav__close
+        display: inherit
+        position: fixed
+        top: 1rem
+        right: 1rem
+
+      ul
+        margin-top: 10rem
+        flex-direction: column
+
+      li a
+        font-size: 1.2rem
+        padding-left: 2rem
+
+  #main
+    flex-direction: column
+    gap: 4rem
+
+  .main-article
+    display: flex
+    gap: 2rem
+    flex-direction: column
+
+    .main-article__content
+      display: grid
+      grid-template-areas: "title" "description" "action"
+      gap: 2rem
+      margin-top: auto
+
+    .main-article__thumbnail--desktop
+      display: none
+
+    .main-article__thumbnail--mobile
+      display: block
+
+  .bottom-list
+    flex-direction: column
