@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap')
+
+.font
+  font-family: "Barlow Semi Condensed", sans-serif
+  font-weight: 500
+  font-style: normal
+
+  &-bold
+    font-family: "Barlow Semi Condensed", sans-serif
+    font-weight: 600
+    font-style: normal
+
+:root
+  --moderate-violet: hsl(263, 55%, 52%)
+  --very-dark-grayish-blue: hsl(217, 19%, 35%)
+  --very-dark-blackish-blue: hsl(219, 29%, 14%)
+  --white: hsl(0, 0%, 100%)
+  --light-gray: hsl(0, 0%, 81%)
+  --light-grayish-blue: hsl(210, 46%, 95%)
+
+*
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+  font-size: 13px
+  letter-spacing: 0.3px
+
+html
+  height: 100%
+  display: flex
+
+body
+  height: max-content
+  margin: auto
+  display: flex
+  flex-direction: column
+
+html
+  background: var(--light-grayish-blue)
+
+p
+  @extend .font
+
+@mixin testimony-card ($accent, $primary, $secondary)
+  background: $accent
+
+  .user__title, .testimony__description
+    color: $secondary
+
+  .user__name, .testimony__emphasis
+    color: $primary
+
+#main
+  margin: auto
+  max-width: 1124px
+  display: grid
+  grid-template: "tes1 tes1 tes2 tes3" "tes4 tes5 tes5 tes3"
+  grid-template-columns: 256px 256px 256px
+  gap: 24px 32px
+
+  .card--purple
+    @include testimony-card(var(--moderate-violet), var(--white), var(--light-gray))
+    background-image: url("./images/bg-pattern-quotation.svg")
+    background-repeat: no-repeat
+    background-position-x: calc(100% - 6.4rem)
+
+  .card--black
+    @include testimony-card(var(--very-dark-blackish-blue), var(--white),  var(--light-gray))
+
+  .card--gray
+    @include testimony-card(var(--very-dark-grayish-blue), var(--white), var(--light-gray))
+
+  .card--white
+    @include testimony-card(var(--white), var(--very-dark-blackish-blue), var(--very-dark-grayish-blue))
+
+  #daniel-clifford
+    @extend .card--purple
+    grid-area: tes1
+
+  #jonathan-walters
+    @extend .card--gray
+    grid-area: tes2
+
+  #kira-whittle
+    @extend .card--white
+    grid-area: tes3
+
+  #jeanette-harmon
+    @extend .card--white
+    grid-area: tes4
+
+  #patrick-abrams
+    @extend .card--black
+    grid-area: tes5
+
+  .testimony
+    padding: 32px
+    border-radius: 8px
+    box-shadow: 8px 8px 32px -1px var(--light-gray)
+
+  .testimony__user
+    display: grid
+    grid-template: "img name" "img title"
+    grid-template-columns: min-content auto
+    margin-bottom: 1rem
+
+    .user__img
+      width: 2rem
+      height: auto
+      margin-right: 1rem
+      grid-area: img
+      border-radius: 100%
+
+    .user__name
+      grid-area: name
+
+    .user__title
+      font-size: 0.9rem
+      grid-area: title
+
+  .testimony__emphasis
+    margin-bottom: 1.5rem
+    font-size: 1.5rem
+
+  .testimony__description
+    line-height: 1.4rem
+
+footer.attribution
+  text-align: center
+
+@media screen and (max-width: 1176px) and (min-width: 800px)
+  #main
+    padding: 2rem
+    grid-template: "tes1 tes1 tes2" "tes3 tes3 tes3" "tes4 tes5 tes5"
+
+@media screen and (max-width: 800px)
+  #main
+    padding: 4rem 2rem
+    grid-template: "tes1" "tes2" "tes3" "tes4" "tes5"
+
+  .card--purple
+    background-repeat: no-repeat
+    background-position-x: calc(100% - 1.6rem)

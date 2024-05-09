@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+.font, p {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.font-bold {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+}
+
+html {
+  height: 100%;
+  display: flex;
+}
+
+body {
+  height: -moz-max-content;
+  height: max-content;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+html {
+  background: var(--light-grayish-blue);
+}
+
+#main {
+  margin: auto;
+  max-width: 1124px;
+  display: grid;
+  grid-template: "tes1 tes1 tes2 tes3" "tes4 tes5 tes5 tes3";
+  grid-template-columns: 256px 256px 256px;
+  gap: 24px 32px;
+}
+#main .card--purple, #main #daniel-clifford {
+  background: var(--moderate-violet);
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 6.4rem);
+}
+#main .card--purple .user__title, #main #daniel-clifford .user__title, #main .card--purple .testimony__description, #main #daniel-clifford .testimony__description {
+  color: var(--light-gray);
+}
+#main .card--purple .user__name, #main #daniel-clifford .user__name, #main .card--purple .testimony__emphasis, #main #daniel-clifford .testimony__emphasis {
+  color: var(--white);
+}
+#main .card--black, #main #patrick-abrams {
+  background: var(--very-dark-blackish-blue);
+}
+#main .card--black .user__title, #main #patrick-abrams .user__title, #main .card--black .testimony__description, #main #patrick-abrams .testimony__description {
+  color: var(--light-gray);
+}
+#main .card--black .user__name, #main #patrick-abrams .user__name, #main .card--black .testimony__emphasis, #main #patrick-abrams .testimony__emphasis {
+  color: var(--white);
+}
+#main .card--gray, #main #jonathan-walters {
+  background: var(--very-dark-grayish-blue);
+}
+#main .card--gray .user__title, #main #jonathan-walters .user__title, #main .card--gray .testimony__description, #main #jonathan-walters .testimony__description {
+  color: var(--light-gray);
+}
+#main .card--gray .user__name, #main #jonathan-walters .user__name, #main .card--gray .testimony__emphasis, #main #jonathan-walters .testimony__emphasis {
+  color: var(--white);
+}
+#main .card--white, #main #jeanette-harmon, #main #kira-whittle {
+  background: var(--white);
+}
+#main .card--white .user__title, #main #jeanette-harmon .user__title, #main #kira-whittle .user__title, #main .card--white .testimony__description, #main #jeanette-harmon .testimony__description, #main #kira-whittle .testimony__description {
+  color: var(--very-dark-grayish-blue);
+}
+#main .card--white .user__name, #main #jeanette-harmon .user__name, #main #kira-whittle .user__name, #main .card--white .testimony__emphasis, #main #jeanette-harmon .testimony__emphasis, #main #kira-whittle .testimony__emphasis {
+  color: var(--very-dark-blackish-blue);
+}
+#main #daniel-clifford {
+  grid-area: tes1;
+}
+#main #jonathan-walters {
+  grid-area: tes2;
+}
+#main #kira-whittle {
+  grid-area: tes3;
+}
+#main #jeanette-harmon {
+  grid-area: tes4;
+}
+#main #patrick-abrams {
+  grid-area: tes5;
+}
+#main .testimony {
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 8px 8px 32px -1px var(--light-gray);
+}
+#main .testimony__user {
+  display: grid;
+  grid-template: "img name" "img title";
+  grid-template-columns: min-content auto;
+  margin-bottom: 1rem;
+}
+#main .testimony__user .user__img {
+  width: 2rem;
+  height: auto;
+  margin-right: 1rem;
+  grid-area: img;
+  border-radius: 100%;
+}
+#main .testimony__user .user__name {
+  grid-area: name;
+}
+#main .testimony__user .user__title {
+  font-size: 0.9rem;
+  grid-area: title;
+}
+#main .testimony__emphasis {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+#main .testimony__description {
+  line-height: 1.4rem;
+}
+
+footer.attribution {
+  text-align: center;
+}
+
+@media screen and (max-width: 1176px) and (min-width: 800px) {
+  #main {
+    padding: 2rem;
+    grid-template: "tes1 tes1 tes2" "tes3 tes3 tes3" "tes4 tes5 tes5";
+  }
+}
+@media screen and (max-width: 800px) {
+  #main {
+    padding: 4rem 2rem;
+    grid-template: "tes1" "tes2" "tes3" "tes4" "tes5";
+  }
+  .card--purple, #main #daniel-clifford {
+    background-repeat: no-repeat;
+    background-position-x: calc(100% - 1.6rem);
+  }
+}/*# sourceMappingURL=style.css.map */
