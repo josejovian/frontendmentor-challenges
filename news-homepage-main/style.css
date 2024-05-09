@@ -99,8 +99,7 @@ a:hover {
   width: 100%;
   height: auto;
 }
-
-#nav__close {
+#nav #nav__close {
   display: none;
 }
 
@@ -255,21 +254,21 @@ a:hover {
     flex-direction: column;
     gap: 4rem;
   }
-  .main-article {
+  #main .main-article {
     display: flex;
     gap: 2rem;
     flex-direction: column;
   }
-  .main-article .main-article__content {
+  #main .main-article__content {
     display: grid;
     grid-template-areas: "title" "description" "action";
     gap: 2rem;
     margin-top: auto;
   }
-  .main-article .main-article__thumbnail--desktop {
+  #main .main-article__thumbnail--desktop {
     display: none;
   }
-  .main-article .main-article__thumbnail--mobile {
+  #main .main-article__thumbnail--mobile {
     display: block;
   }
   .bottom-list {
