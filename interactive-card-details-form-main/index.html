@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <section class="bg">
+      <div class="bg__card-container">
+        <div class="bg__card--front">
+          <img class="card__img" src="./images/card-logo.svg" alt="Card" />
+          <p id="card__number">0000 0000 0000 0000</p>
+          <p id="card__name">Jane Appleseed</p>
+          <p id="card__exp">00/00</p>
+        </div>
+        <div class="bg__card--back">
+          <p id="card__cvc">000</p>
+        </div>
+      </div>
+    </section>
+    <main class="main">
+      <div id="main__form">
+        <div class="main__detail">
+          <p class="detail__key">Cardholder Name</p>
+          <input
+            id="input__name"
+            class="detail__input"
+            placeholder="e.g. Jane Appleseed"
+          />
+          <p id="error__name" class="detail__error"></p>
+        </div>
+        <div class="main__detail">
+          <p class="detail__key">Card Number</p>
+          <input
+            id="input__number"
+            class="detail__input"
+            placeholder="e.g. 1234 5678 9123 0000"
+          />
+          <p id="error__number" class="detail__error"></p>
+        </div>
+        <div class="column-two">
+          <div class="main__detail">
+            <p class="detail__key">Exp. Date (MM/YY)</p>
+            <div class="column-two">
+              <input
+                id="input__exp-mm"
+                class="detail__input"
+                placeholder="MM"
+              />
+              <input
+                id="input__exp-yy"
+                class="detail__input"
+                placeholder="YY"
+              />
+            </div>
+            <p id="error__exp" class="detail__error"></p>
+          </div>
+          <div class="main__detail">
+            <p class="detail__key">CVC</p>
+            <input
+              id="input__cvc"
+              class="detail__input"
+              placeholder="e.g. 123"
+            />
+            <p id="error__cvc" class="detail__error"></p>
+          </div>
+        </div>
+        <button id="confirm">Confirm</button>
+      </div>
+
+      <!-- Completed state start -->
+
+      <div id="main__success">
+        <img
+          class="success__img"
+          src="./images/icon-complete.svg"
+          alt="Complete"
+        />
+        <p class="success__title">Thank you!</p>
+        <p class="success__description">We've added your card details</p>
+        <button id="continue">Continue</button>
+      </div>
+      <footer class="attribution">
+        <p>
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="https://github.com/josejovian">Jose Jovian</a>.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
