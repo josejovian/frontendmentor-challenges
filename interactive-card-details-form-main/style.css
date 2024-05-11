@@ -2,7 +2,8 @@
 :root {
   --card-width: 450px;
   --card-height: 240px;
-  --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --linear-gradient-1: #6448fe;
+  --linear-gradient-2: #600594;
   --red: hsl(0, 100%, 66%);
   --white: hsl(0, 0%, 100%);
   --light-grayish-violet: hsl(270, 3%, 87%);
@@ -49,10 +50,10 @@ input:focus {
   border: 1px solid var(--dark-grayish-violet);
 }
 input::-moz-placeholder {
-  color: var(--light-grayish-violet);
+  color: var(--dark-grayish-violet);
 }
 input::placeholder {
-  color: var(--light-grayish-violet);
+  color: var(--dark-grayish-violet);
 }
 
 button {
@@ -62,6 +63,11 @@ button {
   background: var(--very-dark-violet);
   color: var(--white);
   padding: 14px;
+}
+button:hover {
+  background: var(--linear-gradient-1);
+  background: linear-gradient(90deg, var(--linear-gradient-1) 0%, var(--linear-gradient-2) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=string.quote($left),endColorstr=string.quote($right),GradientType=1);
 }
 
 .bg {
@@ -207,7 +213,7 @@ button {
     flex-direction: column;
   }
   body .bg {
-    width: 100%;
+    width: 100vw;
     height: 240px;
     background: url("./images/bg-main-mobile.png");
     background-size: 100% auto;
@@ -252,5 +258,17 @@ button {
   }
   body .main #main__success {
     margin-top: 80px;
+  }
+}
+@media screen and (max-width: 450px) {
+  body .bg .bg__card-container {
+    width: 100vw;
+  }
+  body .bg .bg__card--front {
+    left: -60px;
+  }
+  body .bg .bg__card--back {
+    left: unset;
+    right: -60px;
   }
 }/*# sourceMappingURL=style.css.map */

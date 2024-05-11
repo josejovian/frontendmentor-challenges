@@ -1,13 +1,23 @@
+@use "sass:string"
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap')
+
 :root
   --card-width: 450px
   --card-height: 240px
-  --linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%)
+  --linear-gradient-1: #6448fe
+  --linear-gradient-2: #600594
   --red: hsl(0, 100%, 66%)
   --white: hsl(0, 0%, 100%)
   --light-grayish-violet: hsl(270, 3%, 87%)
   --dark-grayish-violet: hsl(279, 6%, 55%)
   --very-dark-violet: hsl(278, 68%, 11%)
+
+@mixin gradient($left, $right)
+  background: $left
+  background: -moz-linear-gradient(90deg, $left 0%, $right 100%)
+  background: -webkit-linear-gradient(90deg, $left 0%, $right 100%)
+  background: linear-gradient(90deg, $left 0%, $right 100%)
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=string.quote($left),endColorstr=string.quote($right),GradientType=1)
 
 *
   font-family: "Space Grotesk", sans-serif
@@ -44,7 +54,7 @@ input
     border: 1px solid var(--dark-grayish-violet)
 
   &::placeholder
-    color: var(--light-grayish-violet)
+    color: var(--dark-grayish-violet)
 
 button
   width: 100%
@@ -53,6 +63,9 @@ button
   background: var(--very-dark-violet)
   color: var(--white)
   padding: 14px
+
+  &:hover
+    @include gradient(var(--linear-gradient-1), var(--linear-gradient-2))
 
 .bg
   display: flex
@@ -196,7 +209,7 @@ button
     flex-direction: column
 
     .bg
-      width: 100%
+      width: 100vw
       height: 240px
       background: url('./images/bg-main-mobile.png')
       background-size: 100% auto
@@ -241,3 +254,16 @@ button
 
       #main__success
         margin-top: 80px
+
+@media screen and (max-width: 450px)
+  body
+    .bg
+      .bg__card-container
+        width: 100vw
+
+      .bg__card--front
+        left: -60px
+
+      .bg__card--back
+        left: unset
+        right: -60px
